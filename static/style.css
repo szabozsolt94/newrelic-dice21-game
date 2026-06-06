@@ -1,0 +1,144 @@
+body {
+    background-color: #080f11;
+    color: white;
+    font-family: "Inter", sans-serif;
+    max-width: 700px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.card {
+    background-color: #111b1f;
+    border: 2px solid #1ce783;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(28, 231, 131, 0.15);
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    color: #1ce783;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.score {
+    font-size: 28px;
+    font-weight: 600;
+}
+.computer-score {
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+button {
+    background-color: #1ce783;
+    color: #080f11;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 150px;
+    height: 50px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.score-card {
+    min-width: 180px;
+}
+
+.score-label {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.score-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1ce783;
+}
+
+.dice {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.rolling {
+    animation: roll 0.5s ease-in-out;
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.stats-card {
+    max-width: 500px;
+    margin: 40px auto 0;
+    padding: 25px;
+    background-color: #111b1f;
+    border: 2px solid #1ce783;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(28, 231, 131, 0.15);
+}
+
+.stats-card h2 {
+    color: #1ce783;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat {
+    padding: 15px;
+    background-color: rgba(28, 231, 131, 0.05);
+    border-radius: 8px;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1ce783;
+}

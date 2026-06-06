@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dice 21 - Zsolt Szabo</title>
+
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <div class="card">
+            <h1>🎲 Dice 21</h1>
+
+            <div id="dice" class="dice">{{ dice_face }}</div>
+
+            <div class="score">Your Score: {{ player_score }}</div>
+
+            <div class="score computer-score">
+                Computer Score: {{ computer_score }}
+            </div>
+
+            <form
+                id="roll-form"
+                action="/roll"
+                method="post"
+                style="display: inline"
+            >
+                <button type="submit">Roll Dice</button>
+            </form>
+
+            <form action="/hold" method="post" style="display: inline">
+                <button type="submit">Hold</button>
+            </form>
+
+            <form action="/new_game" method="post" style="display: inline">
+                <button type="submit">New Game</button>
+            </form>
+
+            <div class="message">{{ message }}</div>
+        </div>
+
+        <div class="stats-card">
+            <h2>Statistics</h2>
+
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-label">Games Played</div>
+                    <div class="stat-value">{{ games_played }}</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">Win Rate</div>
+                    <div class="stat-value">{{ win_rate }}%</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">Wins</div>
+                    <div class="stat-value">{{ wins }}</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">Losses</div>
+                    <div class="stat-value">{{ losses }}</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-label">Draws</div>
+                    <div class="stat-value">{{ draws }}</div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+</html>
