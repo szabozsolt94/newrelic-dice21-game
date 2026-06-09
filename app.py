@@ -1,3 +1,7 @@
+import newrelic.agent
+
+newrelic.agent.initialize('newrelic.ini')
+
 from flask import Flask, render_template, session
 import random
 from telemetry import track_event
@@ -209,6 +213,14 @@ def hold():
 def new_game():
     reset_game()
     return home()
+
+@app.route("/slow")
+def slow():
+    import time
+
+    time.sleep(3)
+
+    return "Slow endpoint for New Relic testing"
 
 
 if __name__ == "__main__":
